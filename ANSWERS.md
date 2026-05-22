@@ -21,8 +21,8 @@ Stack: Vanilla HTML, CSS, and JavaScript.
 
 This is a single-screen calculator with no routing or persistence, so a framework would add overhead without benefit. Vanilla JS keeps it light and fast.
 
-Design decision 1 — Fixed totals panel on mobile.
-On small screens the totals panel is fixed near the top and the card gets extra top padding, so the live totals stay visible even when the keyboard is open. This affects the mobile media query for `.card__right` and `.card`.
+Design decision 1 — Sticky totals panel on mobile.
+On small screens the totals panel moves to the top and stays sticky, so the live totals remain visible as you scroll through the form. This affects the mobile media query for `.card__right`.
 
 Design decision 2 — Per-person amount is the visual priority.
 The per-person value uses the largest type and an accent color so the most important number stands out. This affects `.result.emphasis strong` in the totals panel.
@@ -48,4 +48,4 @@ Tool used: GitHub Copilot chat (GPT-5.2-Codex).
 
 ## 5. Honest gap
 
-The mobile keyboard can still cover some input fields on very short screens because the totals panel is fixed at the top. With another day I would switch to a bottom docked totals bar on focus, or dynamically shrink the totals panel while typing so the inputs remain fully visible.
+The mobile keyboard can still cover some input fields on very short screens because the totals panel sits at the top when sticky. With another day I would switch to a bottom docked totals bar on focus, or dynamically shrink the totals panel while typing so the inputs remain fully visible.
