@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tip Splitter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="kicker">Tip calculator</p>
+        <h1>Split the bill with confidence.</h1>
+        <p class="subhead">
+          Instant per-person totals, smart rounding, and clear inline feedback.
+        </p>
+      </header>
+
+      <main class="card" aria-labelledby="calculator-title">
+        <div class="card__left">
+          <h2 id="calculator-title">Calculator</h2>
+          <form id="tip-form" novalidate>
+            <div class="field">
+              <label for="bill">Bill amount (USD)</label>
+              <div class="input-wrap">
+                <span class="prefix">$</span>
+                <input
+                  id="bill"
+                  name="bill"
+                  type="text"
+                  inputmode="decimal"
+                  placeholder="0.00"
+                  autocomplete="off"
+                />
+              </div>
+              <p class="error" id="bill-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label>Tip percentage</label>
+              <div class="preset-grid" role="group" aria-label="Tip presets">
+                <button type="button" class="preset" data-tip="10">10%</button>
+                <button type="button" class="preset" data-tip="15">15%</button>
+                <button type="button" class="preset" data-tip="20">20%</button>
+                <button type="button" class="preset" data-tip="25">25%</button>
+                <button type="button" class="preset" data-tip="30">30%</button>
+              </div>
+              <div class="input-wrap">
+                <input
+                  id="custom-tip"
+                  name="custom-tip"
+                  type="text"
+                  inputmode="decimal"
+                  placeholder="Custom %"
+                  autocomplete="off"
+                  aria-describedby="tip-error"
+                />
+                <span class="suffix">%</span>
+              </div>
+              <p class="error" id="tip-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="people">Number of people</label>
+              <div class="input-wrap">
+                <input
+                  id="people"
+                  name="people"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="1"
+                  autocomplete="off"
+                  aria-describedby="people-error"
+                />
+              </div>
+              <p class="error" id="people-error" aria-live="polite"></p>
+            </div>
+
+            <button type="button" id="reset" class="reset">Reset</button>
+          </form>
+        </div>
+
+        <aside class="card__right" aria-live="polite">
+          <h3>Live totals</h3>
+          <div class="result">
+            <span>Total tip</span>
+            <strong id="total-tip">$0.00</strong>
+          </div>
+          <div class="result">
+            <span>Grand total</span>
+            <strong id="grand-total">$0.00</strong>
+          </div>
+          <div class="result emphasis">
+            <span>Per person</span>
+            <strong id="per-person">$0.00</strong>
+          </div>
+          <p class="policy" id="rounding-policy">
+            Rounding policy: per-person is rounded up to the nearest cent.
+          </p>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
