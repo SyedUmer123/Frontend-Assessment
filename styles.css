@@ -241,7 +241,7 @@ input {
 
   .card {
     width: 100%;
-    padding: clamp(220px, 35vh, 280px) 20px 20px;
+    padding: clamp(220px, 35svh, 280px) 20px 20px;
     grid-template-columns: 1fr;
     overflow: visible;
   }
@@ -252,7 +252,7 @@ input {
     top: 12px;
     left: 16px;
     right: 16px;
-    z-index: 3;
+    z-index: 4;
     min-width: 0;
   }
 }
