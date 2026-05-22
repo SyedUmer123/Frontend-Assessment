@@ -147,9 +147,12 @@ const calculate = () => {
   const total = bill + tipAmount;
   const perPersonRaw = total / people;
   const perPersonRounded = Math.ceil(perPersonRaw * 100) / 100;
+  const roundedTotal = perPersonRounded * people;
+  const overage = roundedTotal - total;
+  const adjustedTip = tipAmount + overage;
 
-  totalTipEl.textContent = formatCurrency(tipAmount);
-  grandTotalEl.textContent = formatCurrency(total);
+  totalTipEl.textContent = formatCurrency(adjustedTip);
+  grandTotalEl.textContent = formatCurrency(bill + adjustedTip);
   perPersonEl.textContent = formatCurrency(perPersonRounded);
 };
 

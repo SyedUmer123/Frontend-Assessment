@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
   color-scheme: light;
@@ -45,8 +45,8 @@ body {
 .kicker {
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
   color: var(--accent-strong);
   margin-bottom: 8px;
 }
