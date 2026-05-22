@@ -241,19 +241,30 @@ input {
 
   .card {
     width: 100%;
-    padding: clamp(220px, 35svh, 280px) 20px 20px;
+    padding: 0;
     grid-template-columns: 1fr;
     overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card::before {
+    display: none;
   }
 
   .card__right {
     order: -1;
-    position: fixed;
-    top: 12px;
-    left: 16px;
-    right: 16px;
-    z-index: 4;
+    position: sticky;
+    top: 0;
+    z-index: 3;
     min-width: 0;
+    padding: 22px 20px 16px 20px;
+    margin-bottom: 20px;
+  }
+
+  .card__left {
+    padding: 20px;
+    padding-top: 0;
   }
 }
 
